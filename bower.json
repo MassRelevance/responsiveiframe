@@ -1,0 +1,12 @@
+{
+  "name": "responsiveiframe",
+  "version": "0.0.4",
+  "main": "dist/jquery.responsiveiframe.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
