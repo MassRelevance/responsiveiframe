@@ -36,9 +36,6 @@ module.exports = function(grunt) {
     qunit: {
       files: ['test/**/*.html']
     },
-    jslint: {
-      files: ['grunt.js', 'src/**/*.js', 'test/**/*.js']
-    },
     watch: {
       files: '<config:lint.files>',
       tasks: 'lint qunit'
@@ -55,21 +52,28 @@ module.exports = function(grunt) {
         undef: true,
         boss: true,
         eqnull: true,
-        browser: true
+        browser: true,
+        globals: {
+          jQuery: true,
+          define: true,
+          module: true
+        }
       },
-      globals: {
-        jQuery: true
+      dist: {
+        files: {
+          src: ['src/**/*.js', 'test/**/*.js']
+        }
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-jslint');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task.
-  grunt.registerTask('default', ['jslint','concat','clean','uglify']);
+  grunt.registerTask('default', ['jshint','clean','concat','uglify']);
 
 };
