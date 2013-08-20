@@ -112,7 +112,7 @@ if (typeof jQuery !== 'undefined') {
       if(top.postMessage){
         top.postMessage( newHeight , '*');
       }
-    };
+    }
 
     function firstLoad() {
       var currentHeight = getDocHeight();
