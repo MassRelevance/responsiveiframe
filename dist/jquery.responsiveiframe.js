@@ -1,11 +1,10 @@
-/*! jQuery ResponsiveIframe - v0.0.4 - 2013-08-16
+/*! jQuery ResponsiveIframe - v0.0.5 - 2013-08-20
 * https://github.com/npr/responsiveiframe
 * Copyright (c) 2013 inadarei; Licensed MIT, GPL */
 if (typeof jQuery !== 'undefined') {
   (function( $ ){
     var settings = {
       xdomain: '*',
-      ie : navigator.userAgent.toLowerCase().indexOf('msie') > -1,
       scrollToTop: true
     };
 
@@ -25,16 +24,6 @@ if (typeof jQuery !== 'undefined') {
                 privateMethods.messageHandler($this,e);
               }, $this);
             }
-          } else {
-            setInterval(function () {
-              var hash = window.location.hash, matches = hash.match(/^#h(\d+)(s?)$/);
-              if (matches) {
-                privateMethods.setHeight($this, matches[1]);
-                if (settings.scrollToTop && matches[2] === 's'){
-                  scroll(0,0);
-                }
-              }
-            }, 150);
           }
         });
       }
@@ -55,7 +44,7 @@ if (typeof jQuery !== 'undefined') {
           if(e.origin.match(regex)){
             matches = true;
           }else{
-            throw new Error("messageHandler( elem, e): The orgin doesn't match the responsiveiframe  xdomain.");
+            throw new Error("messageHandler( elem, e): The origin doesn't match the responsiveiframe  xdomain.");
           }
         }
 
@@ -125,10 +114,8 @@ if (typeof jQuery !== 'undefined') {
       newHeight += (opts.scrollToTop) ? 's' : '';
       if(top.postMessage){
         top.postMessage( newHeight , '*');
-      } else {
-        window.location.hash = 'h'+newHeight;
       }
-    };
+    }
 
     function firstLoad() {
       var currentHeight = getDocHeight();
