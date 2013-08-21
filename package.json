@@ -2,7 +2,7 @@
   "name": "jquery.responsiveiframe",
   "title": "jQuery ResponsiveIframe",
   "description": "jQuery ResponsiveIframe by NPR.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/npr/responsiveiframe",
   "author": {
     "name": "inadarei",
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npr/responsiveiframe.git"
+    "url": "https://github.com/MassRelevance/responsiveiframe.git"
   },
   "bugs": {
-    "url": "https://github.com/npr/responsiveiframe/issues"
+    "url": "https://github.com/MassRelevance/responsiveiframe/issues"
   },
   "licenses": [
     {
