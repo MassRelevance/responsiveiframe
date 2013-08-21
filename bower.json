@@ -1,6 +1,6 @@
 {
   "name": "responsiveiframe",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "main": "dist/jquery.responsiveiframe.js",
   "ignore": [
     "**/.*",
